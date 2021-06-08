@@ -1,19 +1,24 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { Card } from '../Card';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import Loading from '../../assets/svg/Spin.svg';
 
 import './List.scss';
+import classNames from 'classnames';
 export const List: FC = () => {
-  const state = useTypedSelector((state) => state.repo);
+  const { repos, loading } = useTypedSelector((state) => state.repo);
+  if (loading) {
+    return (
+      <section className="list loading">
+        <img src={Loading} alt="loading" />
+      </section>
+    );
+  }
+  
   return (
     <section className="list">
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+      {repos && repos.map((repo) => <Card {...repo} />)}
     </section>
   );
 };

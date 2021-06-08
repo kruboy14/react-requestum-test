@@ -23,6 +23,9 @@ export const repoReducer = (
     case repoActionTypes.FETCH_REPO_ERROR: {
       return { ...state, loading: false, error: action.payload };
     }
+    case repoActionTypes.RESET_REPO: {
+      return { ...state, loading: false, error: null, repos: [] };
+    }
     default:
       return state;
   }

@@ -1,21 +1,30 @@
 import React, { FC } from 'react';
+import { IRepo } from '../../types/types';
 
 import './Card.scss';
-export const Card: FC = () => {
+
+export const Card: FC<IRepo> = ({
+  html_url,
+  id,
+  description,
+  name,
+  language,
+}: IRepo) => {
+  const handleCardClick = (url: string) => {
+    window.location.href = url;
+  };
   return (
-    <div className="card">
-      <div className="card-title"><h2>accordion</h2></div>
+    <div onClick={() => handleCardClick(html_url)} className="card">
+      <div className="card-title">
+        <h2>{name}</h2>
+      </div>
       <div className="card-language">
         <span>Language:</span>&nbsp;
-        <b>Java</b>
+        <b>{language}</b>
       </div>
       <div className="card-description">
         <span>Description:</span>&nbsp;
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, dicta
-          commodi! Reprehenderit modi tempora consequuntur non minima,
-          voluptatibus voluptas repellendus!
-        </p>
+        <p>{description}</p>
       </div>
     </div>
   );
