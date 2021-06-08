@@ -1,7 +1,32 @@
-
-.header{
-  &-logo{
-    width: 40px;
-    height: 40px;
+.header {
+  display: flex;
+  color: rgb(199, 173, 26);
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 2px solid rgb(199, 173, 26);
+  &-company-info {
+    display: flex;
+    align-items: center;
+  }
+  &-logo {
+    width: 100px;
+  }
+  &-title-container {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &-title {
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+  &-subtitle {
+    text-align: center;
+    letter-spacing: 1.2px;
+  }
+  &-info{
+    font-size: 18px;
   }
 }
