@@ -1,6 +1,8 @@
-import { combineReducers } from "redux";
-import { repoReducer } from "./repoReducer";
+import { combineReducers } from 'redux';
+import { repoReducer } from './repoReducer';
 
 export const rootReducer = combineReducers({
-  repos: repoReducer
-})
+  repo: repoReducer,
+});
+
+export type RootState = ReturnType<typeof rootReducer>;
