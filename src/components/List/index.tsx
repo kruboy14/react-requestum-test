@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Loading from '../../assets/svg/Spin.svg';
 
 import './List.scss';
-import classNames from 'classnames';
+import { NotFound } from '../NotFound';
 export const List: FC = () => {
   const { repos, loading } = useTypedSelector((state) => state.repo);
   if (loading) {
@@ -18,7 +18,7 @@ export const List: FC = () => {
   
   return (
     <section className="list">
-      {repos && repos.map((repo) => <Card {...repo} />)}
+      {repos ? repos.map((repo) => <Card {...repo} />): <NotFound/>}
     </section>
   );
 };

@@ -19,7 +19,13 @@ export const fetchRepo =
         description: item.description,
         language: item.language,
       }));
-      dispatch({type: repoActionTypes.FETCH_REPO_SUCCESS, payload: repoData})
+      if (!repoData.length) {
+        return dispatch({
+          type: repoActionTypes.FETCH_REPO_SUCCESS,
+          payload: null,
+        });
+      }
+      dispatch({ type: repoActionTypes.FETCH_REPO_SUCCESS, payload: repoData });
     } catch (error) {
       dispatch({
         type: repoActionTypes.FETCH_REPO_ERROR,
@@ -28,6 +34,6 @@ export const fetchRepo =
     }
   };
 
-  export const nullRepo = () => (dispatch: Dispatch<RepoAction>) =>{
-    dispatch({type: repoActionTypes.RESET_REPO})
-  }
+export const nullRepo = () => (dispatch: Dispatch<RepoAction>) => {
+  dispatch({ type: repoActionTypes.RESET_REPO });
+};

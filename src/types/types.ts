@@ -13,7 +13,7 @@ export interface IAxiosRepo {
 }
 
 export interface RepoState {
-  repos: IRepo[];
+  repos: IRepo[] | null;
   loading: boolean;
   error: null | string;
 }

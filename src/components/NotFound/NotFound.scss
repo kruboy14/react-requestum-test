@@ -1,0 +1,16 @@
+.list-notFound {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  font-size: 42px;
+  @media (max-width: 1024px) {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+}

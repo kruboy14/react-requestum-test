@@ -11,7 +11,7 @@ export interface FetchRepoAction {
 }
 export interface FetchRepoSuccessAction {
   type: repoActionTypes.FETCH_REPO_SUCCESS;
-  payload: IRepo[];
+  payload: IRepo[] | null;
 }
 export interface FetchRepoErrorAction {
   type: repoActionTypes.FETCH_REPO_ERROR;

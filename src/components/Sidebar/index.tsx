@@ -12,8 +12,7 @@ export const Sidebar: FC = () => {
   const { fetchRepo, nullRepo, addHistorySearch } = useActions();
   const history = useTypedSelector((state) => state.historySearch.history);
   useEffect(() => {
-    console.log(searchHistory, 1);
-    console.log(history, 2);
+
 
     setSearchHistory(history);
   }, [history]);
