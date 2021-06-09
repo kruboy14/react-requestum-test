@@ -17,3 +17,7 @@ export interface RepoState {
   loading: boolean;
   error: null | string;
 }
+
+export interface HistoryState {
+  history: string[];
+}
