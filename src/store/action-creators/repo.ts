@@ -10,7 +10,10 @@ export const fetchRepo =
       const {
         data: { items },
       } = await axios.get<IAxiosRepo>(
-        `/search/repositories?q=${value}&access_token=${process.env.REACT_APP_API_GITHUB}`,
+        `/search/repositories?q=${value}`,
+        {headers: {
+          'Authorization': `token ${process.env.REACT_APP_API_GITHUB}`
+        }}
       );
       const repoData: IRepo[] = items.map((item) => ({
         id: item.id,
