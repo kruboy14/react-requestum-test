@@ -23,7 +23,7 @@ export const Sidebar: FC = () => {
   };
 
   const debouncedGetResponse = useCallback(
-    debounce((value) => debouncefetchRepo(value), 300),
+    debounce((value) => debouncefetchRepo(value), 500),
     [],
   );
 
