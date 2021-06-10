@@ -19,7 +19,7 @@ export const Sidebar: FC = () => {
   const debouncefetchRepo = async (value: string) => {
     await fetchRepo(value);
     addHistorySearch(value);
-    setInputSearchValue('');
+   
   };
 
   const debouncedGetResponse = useCallback(
